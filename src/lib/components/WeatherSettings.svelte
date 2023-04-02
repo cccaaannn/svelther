@@ -8,7 +8,8 @@
     import WeatherSettingsStore from "@/stores/weather-settings-store";
     import StorageUtils from "@/utils/storage-utils";
     import ThemeUtils from "@/utils/theme-utils";
-    import appTheme, { themeDetails } from "@/data/theme";
+    import { themeDetails } from "@/data/theme";
+    import settingsIcon from "@/assets/img/settings.svg";
 
     let selectedUnit = WeatherSettingsStore.unitDetailStoreInitialState.fieldName;
     let city = WeatherSettingsStore.cityStoreInitialState;
@@ -83,7 +84,7 @@
             on:mouseleave={() => (settingsIconRotation = 0)}
         >
             <img
-                src="/img/settings.svg"
+                src={settingsIcon}
                 alt="thermometer icon"
                 class="filter-green"
                 style={`height: 30px; width: 30px; transform: rotate(${settingsIconRotation}deg);`}

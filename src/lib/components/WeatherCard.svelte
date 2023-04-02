@@ -10,6 +10,8 @@
     import WeatherSettings from "./WeatherSettings.svelte";
     import WeatherIconUtils from "@/utils/weather-icon-utils";
     import WeatherSettingsStore from "@/stores/weather-settings-store";
+    import pressureIcon from "@/assets/img/pressure.svg";
+    import rainDropIcon from "@/assets/img/rain-drop.svg";
 
     let selectedUnitDetail: UnitDetail =
         WeatherSettingsStore.unitDetailStoreInitialState;
@@ -120,7 +122,7 @@
                         </Cell>
                         <Cell span={6}>
                             <WeatherDetail
-                                detailImage="/img/pressure.svg"
+                                detailImage={pressureIcon}
                                 detailText={weatherData.main.pressure}
                                 detailUnit="hPa"
                             />
@@ -136,7 +138,7 @@
                         </Cell>
                         <Cell span={6}>
                             <WeatherDetail
-                                detailImage="/img/rain-drop.svg"
+                                detailImage={rainDropIcon}
                                 detailText={weatherData.main.humidity}
                                 detailUnit="%"
                             />
