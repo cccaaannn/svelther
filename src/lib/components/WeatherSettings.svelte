@@ -84,30 +84,34 @@
                     bind:value={city}
                     on:input={onCityChange}
                 />
-                <Select
-                    label="Unit"
-                    variant="outlined"
-                    style="width: 100%; border: 1px var(--app-theme-primary) solid; margin-top: 1em;"
-                    bind:value={selectedUnit}
-                >
-                    {#each unitDetails as unitDetail}
-                        <Option value={unitDetail.fieldName}
-                            >{unitDetail.displayName}</Option
-                        >
-                    {/each}
-                </Select>
-                <Select
-                    label="Theme"
-                    variant="outlined"
-                    style="width: 100%; border: 1px var(--app-theme-primary) solid; margin-top: 1em;"
-                    bind:value={selectedTheme}
-                >
-                    {#each themeDetails as themeDetail}
-                        <Option value={themeDetail.fieldName}
-                            >{themeDetail.displayName}</Option
-                        >
-                    {/each}
-                </Select>
+
+
+                <div style="display: flex; justify-content: space-between;">
+                    <Select
+                        label="Unit"
+                        variant="outlined"
+                        style="width: 47%; border: 1px var(--app-theme-primary) solid; margin-top: 1em;"
+                        bind:value={selectedUnit}
+                    >
+                        {#each unitDetails as unitDetail}
+                            <Option value={unitDetail.fieldName}
+                                >{unitDetail.displayName}</Option
+                            >
+                        {/each}
+                    </Select>
+                    <Select
+                        label="Theme"
+                        variant="outlined"
+                        style="width: 47%; border: 1px var(--app-theme-primary) solid; margin-top: 1em;"
+                        bind:value={selectedTheme}
+                    >
+                        {#each themeDetails as themeDetail}
+                            <Option value={themeDetail.fieldName}
+                                >{themeDetail.displayName}</Option
+                            >
+                        {/each}
+                    </Select>
+                </div>
             </div>
         </Content>
     </Panel>
