@@ -1,12 +1,10 @@
 <script lang="ts">
-    import { onMount } from "svelte";
     import Accordion, { Panel, Header, Content } from "@smui-extra/accordion";
     import IconButton, { Icon } from "@smui/icon-button";
     import Textfield from "@smui/textfield";
     import { unitDetails } from "@/data/unit";
     import Select, { Option } from "@smui/select";
     import WeatherSettingsStore from "@/stores/weather-settings-store";
-    import StorageUtils from "@/utils/storage-utils";
     import ThemeUtils from "@/utils/theme-utils";
     import { themeDetails } from "@/data/theme";
     import settingsIcon from "@/assets/img/settings.svg";
@@ -58,23 +56,6 @@
             setCityStore();
         }, debounceTimerTime);
     };
-
-    onMount(() => {
-        city = StorageUtils.loadItem("CITY") || WeatherSettingsStore.cityStoreInitialState;
-        
-        const selectedUnitId = parseInt(StorageUtils.loadItem("UNIT"), 10) || WeatherSettingsStore.unitDetailStoreInitialState.id;
-        selectedUnit = unitDetails.filter((unitDetail) => unitDetail.id === selectedUnitId)[0].fieldName;
-        
-        const selectedThemeId = parseInt(StorageUtils.loadItem("THEME"), 10) || WeatherSettingsStore.themeStoreInitialState.id;
-        selectedTheme = themeDetails.filter((themeDetail) => themeDetail.id === selectedThemeId)[0].fieldName;
-
-        setCityStore();
-        setUnitStore();
-        setThemeStore();
-
-        // Enable storage after previous settings applied
-        StorageUtils.toggleStorageStatus("ENABLED");
-    });
 </script>
 
 <Accordion>

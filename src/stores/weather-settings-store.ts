@@ -1,27 +1,15 @@
 import { themeDetails, type ThemeDetail } from '@/data/theme';
 import { unitDetails, type UnitDetail } from '@/data/unit';
+import persistedStore from '@/stores/persisted-store';
 import StorageUtils from '@/utils/storage-utils';
-import { writable } from 'svelte/store';
 
-const unitDetailStoreInitialState: UnitDetail = unitDetails[0];
-const cityStoreInitialState: string = "turkey";
-const themeStoreInitialState: ThemeDetail = themeDetails[0];
+const unitDetailStoreInitialState: UnitDetail = StorageUtils.loadWeatherItem<UnitDetail>("UNIT") ?? unitDetails[0];
+const cityStoreInitialState: string = StorageUtils.loadWeatherItem<string>("CITY") ?? "turkey";
+const themeStoreInitialState: ThemeDetail = StorageUtils.loadWeatherItem<ThemeDetail>("THEME") ?? themeDetails[0];
 
-const unitDetailStore = writable(unitDetailStoreInitialState);
-const cityStore = writable(cityStoreInitialState);
-const themeStore = writable(themeStoreInitialState);
-
-
-unitDetailStore.subscribe((unitDetail: UnitDetail) => {
-    StorageUtils.saveItem("UNIT", unitDetail.id);
-});
-cityStore.subscribe((city: string) => {
-    StorageUtils.saveItem("CITY", city);
-});
-themeStore.subscribe((themeDetail: ThemeDetail) => {
-    StorageUtils.saveItem("THEME", themeDetail.id);
-});
-
+const unitDetailStore = persistedStore<UnitDetail>(unitDetailStoreInitialState, "UNIT");
+const cityStore = persistedStore<string>(cityStoreInitialState, "CITY");
+const themeStore = persistedStore<ThemeDetail>(themeStoreInitialState, "THEME");
 
 const WeatherSettingsStore = {
     unitDetailStoreInitialState,

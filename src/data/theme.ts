@@ -24,34 +24,28 @@ type AppTheme = {
 }
 
 export interface ThemeDetail {
-    id: number,
     displayName: string,
     fieldName: ThemeNames,
 }
 
 export const themeDetails: ThemeDetail[] = [
     {
-        id: 1,
         displayName: "Green",
         fieldName: ThemeNames.GREEN
     },
     {
-        id: 2,
         displayName: "Blue",
         fieldName: ThemeNames.BLUE
     },
     {
-        id: 3,
         displayName: "Teal",
         fieldName: ThemeNames.TEAL
     },
     {
-        id: 4,
         displayName: "Orange",
         fieldName: ThemeNames.ORANGE
     },
     {
-        id: 5,
         displayName: "Pink",
         fieldName: ThemeNames.PINK
     }

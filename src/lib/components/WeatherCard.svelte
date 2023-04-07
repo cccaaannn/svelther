@@ -20,7 +20,6 @@
         const weatherData = await WeatherService.getWeather(
             WeatherSettingsStore.cityStoreInitialState
         );
-        console.log(weatherData);
         return weatherData;
     })();
 
@@ -30,6 +29,7 @@
     WeatherSettingsStore.cityStore.subscribe((city: string) => {
         weatherDataPromise = WeatherService.getWeather(city);
     });
+
 </script>
 
 <svelte:head>

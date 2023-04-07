@@ -4,7 +4,6 @@ export enum Unit {
 }
 
 export interface UnitDetail {
-    id: number,
     displayName: string,
     fieldName: Unit,
     speedUnit: string,
@@ -13,14 +12,12 @@ export interface UnitDetail {
 
 export const unitDetails: UnitDetail[] = [
     {
-        id: 1,
         displayName: "Metric",
         fieldName: Unit.METRIC,
         speedUnit: "m/s",
         temperatureUnit: "°C",
     },
     {
-        id: 2,
         displayName: "Imperial",
         fieldName: Unit.IMPERIAL,
         speedUnit: "mPh",
