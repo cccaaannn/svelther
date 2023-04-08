@@ -9,6 +9,7 @@ export enum ThemeNames {
 interface Theme {
     svgHueRotate: string,
     primary: string,
+    secondary: string,
     background: {
         main: string,
         light: string
@@ -51,10 +52,11 @@ export const themeDetails: ThemeDetail[] = [
     }
 ]
 
-const appTheme: AppTheme = {
+export const appTheme: AppTheme = {
     GREEN: {
         svgHueRotate: "75deg",
         primary: "#35c840",
+        secondary: "#b05bed",
         background: {
             main: "#141916",
             light: "#19201C"
@@ -67,6 +69,7 @@ const appTheme: AppTheme = {
     BLUE: {
         svgHueRotate: "155deg",
         primary: "#2fb7df",
+        secondary: "#d39120",
         background: {
             main: "#141916",
             light: "#19201C"
@@ -79,6 +82,7 @@ const appTheme: AppTheme = {
     TEAL: {
         svgHueRotate: "125deg",
         primary: "#20c7b2",
+        secondary: "#e01e4e",
         background: {
             main: "#141916",
             light: "#19201C"
@@ -91,6 +95,7 @@ const appTheme: AppTheme = {
     ORANGE: {
         svgHueRotate: "0deg",
         primary: "#d39120",
+        secondary: "#2fb7df",
         background: {
             main: "#141916",
             light: "#19201C"
@@ -103,6 +108,7 @@ const appTheme: AppTheme = {
     PINK: {
         svgHueRotate: "275deg",
         primary: "#cb6ac2",
+        secondary: "#35c840",
         background: {
             main: "#141916",
             light: "#19201C"
