@@ -9,7 +9,7 @@
         <img
             src={detailImage}
             alt="weather detail icon"
-            class="filter-green"
+            class="svg-primary-color-filter"
             style="height: 50px; width: 50px;"
         />
     </div>
