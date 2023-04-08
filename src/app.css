@@ -1,6 +1,7 @@
 :root {
     --app-theme-svg-hue-rotate: 75deg;
     --app-theme-primary: #35c840;
+    --app-theme-secondary: #b05bed;
     --app-theme-background-main: #141916;
     --app-theme-background-light: #19201C;
     --app-theme-text-primary: #ffff;
@@ -45,7 +46,7 @@ body {
     color: var(--app-theme-text-primary) !important;
 }
 
-.filter-green {
+.svg-primary-color-filter {
     filter: invert(65%) sepia(100%) saturate(2000%) hue-rotate(var(--app-theme-svg-hue-rotate)) brightness(100%) contrast(75%);
 }
 

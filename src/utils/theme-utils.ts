@@ -13,16 +13,22 @@ const changeTheme = (name: ThemeNames) => {
 
     cssVariables.set("--app-theme-svg-hue-rotate", appTheme[name].svgHueRotate);
     cssVariables.set("--app-theme-primary", appTheme[name].primary);
+    cssVariables.set("--app-theme-secondary", appTheme[name].secondary);
     cssVariables.set("--app-theme-background-main", appTheme[name].background.main);
     cssVariables.set("--app-theme-background-light", appTheme[name].background.light);
     cssVariables.set("--app-theme-text-primary", appTheme[name].text.primary);
     cssVariables.set("--app-theme-text-secondary", appTheme[name].text.secondary);
-
+    
     refreshCsVariables(cssVariables);
 }
 
+const getTheme = (name: ThemeNames) => {
+    return appTheme[name];
+}
+
 const ThemeUtils = {
-    changeTheme
+    changeTheme,
+    getTheme
 }
 
 export default ThemeUtils;
