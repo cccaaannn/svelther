@@ -11,6 +11,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: 'Create env file'
+        run: |
+          touch .env
+          echo VITE_OPENWEATHERMAP_API_KEY=${{ secrets.OPENWEATHERMAP_API_KEY }} >> .env
+
       - name: Set up Node
         uses: actions/setup-node@v3
         with:
